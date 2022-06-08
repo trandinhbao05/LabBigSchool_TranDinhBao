@@ -8,6 +8,8 @@ namespace LabBigSchool_TranDinhBao.Models
 {
     public class Course
     {
+        internal DateTime DateTime;
+
         public int Id { get; set; }
 
         public ApplicationUser Lecturer { get; set; }

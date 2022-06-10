@@ -182,6 +182,10 @@
     <Compile Include="Migrations\202206030732383_PopulateCategoryTable.Designer.cs">
       <DependentUpon>202206030732383_PopulateCategoryTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206100833449_AddNameColumnToApplicationUser.cs" />
+    <Compile Include="Migrations\202206100833449_AddNameColumnToApplicationUser.Designer.cs">
+      <DependentUpon>202206100833449_AddNameColumnToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -276,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206030732383_PopulateCategoryTable.resx">
       <DependentUpon>202206030732383_PopulateCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206100833449_AddNameColumnToApplicationUser.resx">
+      <DependentUpon>202206100833449_AddNameColumnToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

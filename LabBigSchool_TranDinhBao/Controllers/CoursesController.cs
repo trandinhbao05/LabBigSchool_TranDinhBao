@@ -1,12 +1,12 @@
-﻿using LabBigSchool_TranDinhBao.Models;
-using LabBigSchool_TranDinhBao.ViewModels;
+﻿using LabBigSchool_TranDinhBao.ViewModels;
+using LabBigSchool_TranDinhBao.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace LabBigSchool_TranDinhBao.Controllers
 {
@@ -17,8 +17,11 @@ namespace LabBigSchool_TranDinhBao.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
-        [Authorize]
+
+        public object Uses { get; private set; }
+
         // GET: Courses
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel
@@ -27,6 +30,7 @@ namespace LabBigSchool_TranDinhBao.Controllers
             };
             return View(viewModel);
         }
+
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -46,7 +50,9 @@ namespace LabBigSchool_TranDinhBao.Controllers
             };
             _dbContext.Courses.Add(course);
             _dbContext.SaveChanges();
+
             return RedirectToAction("Index", "Home");
         }
     }
 }
+

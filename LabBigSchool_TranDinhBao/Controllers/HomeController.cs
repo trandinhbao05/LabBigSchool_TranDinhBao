@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace LabBigSchool_TranDinhBao.Controllers
 {
@@ -16,12 +17,11 @@ namespace LabBigSchool_TranDinhBao.Controllers
         }
         public ActionResult Index()
         {
-            var upcomingCourses = _dbContext.Courses
-                .Include(c => c.Lecturer)
-                .Include(c => c.Category)
-                .Where(c => c.DateTime > DateTime.Now);
-            return View(upcomingCourses);
-        }
+            var upcommingCourses = _dbContext.Courses
+                 .Include(c => c.Lecturer)
+                 .Include(c => c.Category)
+                 .Where(c => c.DataTime > DateTime.Now);
+            return View(upcommingCourses);        }
 
         public ActionResult About()
         {

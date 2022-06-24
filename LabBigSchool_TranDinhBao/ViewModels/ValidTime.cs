@@ -13,7 +13,7 @@ namespace LabBigSchool_TranDinhBao.ViewModels
         {
             DateTime dateTime;
             var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "dd/M/yyyy",
+                "HH:mm",
                 CultureInfor.CurrentCulture,
                 DateTimeStyles.None,
                 out dateTime);
